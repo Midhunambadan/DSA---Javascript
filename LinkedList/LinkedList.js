@@ -1,3 +1,25 @@
+
+//Linked List Questions
+// append,
+// prepend,
+// print,
+// reverse,
+// removeDuplicates,
+// sum,
+// removebyIndex,
+// removeByvalue,
+// insertByIndex
+//findMiddleElement and remove
+//search 
+//palindrome
+
+//using tail also do these operations
+
+//Doubly linked list ask same as singly
+
+
+
+
 class Node{
     constructor(value){
         this.value=value
@@ -54,6 +76,7 @@ class LinkedList{
             this.size++
         }
     }
+    
 removeByIndex(index){
     if(index<0||index>this.size){
         return null
@@ -137,16 +160,41 @@ reverse(){
 }
 
 
-duplicates() {
-    let curr = this.head
-    while (curr && curr.next) {
-        if (curr.value === curr.next.value) {
-            curr.next = curr.next.next
-        } else {
-            curr = curr.next
-        }
+// duplicates() {
+//     let curr = this.head
+//     while (curr && curr.next) {
+//         if (curr.value === curr.next.value) {
+//             curr.next = curr.next.next
+//         } else {
+//             curr = curr.next
+//         }
+//     }
+// }
+
+  
+  removeDuplicates(){
+    if(!this.head){
+      return null
     }
-}
+    
+    let curr=this.head
+    let prev=null
+    let seen=new Set()
+    
+    while(curr){
+      if(seen.has(curr.value)){
+        prev.next=curr.next
+      }else{
+        seen.add(curr.value)
+        prev=curr
+      }
+      curr=curr.next
+    }
+    
+    return
+  }
+  
+  
 
 
 sum(){
@@ -158,11 +206,13 @@ sum(){
         while(curr){
             result+=curr.value
             curr=curr.next
-        }
+        }``
 
         console.log('sum =',result)
     }
 }
+
+
 
     print(){
         if(!this.head){
@@ -183,15 +233,15 @@ sum(){
 let list=new LinkedList()
 
 list.prepend(10)
-list.print()
+list.prepend(50)
+// list.print()
 
 list.prepend(20)
+// list.print()
+
+list.prepend(50)
 list.prepend(20)
-list.print()
- 
-list.append(50)
-list.append(50)
-list.print()
+// list.print()
 
 
 // list.insertByIndex(22,3)
@@ -203,16 +253,39 @@ list.print()
 // list.removeByValue(10)
 // list.print()
 
-const index = list.searchValue(50)
-console.log("finded index :",index)
-list.print()
-
-// list.reverse()
+// const index = list.searchValue(50)
+// console.log("finded index :",index)
 // list.print()
 
-
-list.duplicates() 
+// list.reverse()
 list.print()
 
 
-list.sum()
+list.removeDuplicates() 
+
+list.print()
+
+
+// list.sum()
+
+
+
+
+
+//     merge(list) {
+//         if (list.isEmpty()) {
+//             return null;
+//         }
+//         if (this.isEmpty()) {
+//             this.head = list.head
+//             this.tail = list.tail
+//         } else {
+//             this.tail.next = list.head
+//             list.head.prev = this.tail
+//             this.tail = list.tail
+//         }
+//         this.size += list.size
+//     }
+
+
+//list.merge(list2)

@@ -47,7 +47,7 @@ class LinkedList {
 let list = new LinkedList();
 list.append(1);
 list.append(2);
-list.append(3);
+// list.append(3);
 list.append(1);
 
-console.log("Is the linked list a palindrome?", list.isPalindrome()); // Output: true
+console.log( list.isPalindrome()); // Output: true

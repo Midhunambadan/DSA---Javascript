@@ -37,6 +37,25 @@ class LinkedList {
     }
 
 
+
+    deletemiddle(){
+    if(!this.head){
+        return null
+    }
+    let slow = this.head
+    let fast = this.head
+    let prev = null
+    while(fast!==null&&fast.next!==null){
+        prev = slow
+        slow = slow.next
+        fast = fast.next.next
+    }
+    if(prev!==null&&slow!==null){
+        prev.next= slow.next
+    }
+}
+
+
     print() {
         if (!this.head) {
             console.log('Empty list');
@@ -63,3 +82,7 @@ list.print();
 
 let res = list.middleElement();
 console.log(res);
+
+let midDel=list.deletemiddle()
+// console.log(midDel)
+list.print()

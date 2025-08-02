@@ -14,24 +14,33 @@
 
 
 
-let str = "malayalam";
+// let str = "malayalam";
 
-function isPalindrome(str) {
-    let len = str.length;
-    for (let i = 0; i < len / 2; i++) {
-        if (str[i] !== str[len - 1 - i]) {
-            console.log("Not palindrome");
-            return;
-        }
-    }
-    console.log("Is palindrome");
+// function isPalindrome(str) {
+//     let len = str.length;
+//     for (let i = 0; i < len / 2; i++) {
+//         if (str[i] !== str[len - 1 - i]) {
+//             console.log("Not palindrome");
+//             return;
+//         }
+//     }
+//     console.log("Is palindrome");
+// }
+
+// isPalindrome(str);
+
+
+
+function isPalindrome(str,left=0,right=str.length-1){
+    if(left>right)  return true
+
+    if(str[left]!==str[right])  return false
+    
+    return isPalindrome(str,left+1,right-1)
 }
 
-isPalindrome(str);
-
-
-
-
+let str='malayalam'
+console.log(isPalindrome(str))
 
 
 

@@ -1,7 +1,7 @@
 let str ='hi  am  ambadan'
 
 let arr=str.split('')
-console.log(arr);
+// console.log(arr);
 
 for(let i=0;i<arr.length;i++){
 
